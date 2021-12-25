@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <span class="btn_not_today">
+        <input type="checkbox" id="mainNotToday">
+        <label for="mainNotToday">오늘 다시보지 않기</label>
+    </span>
+
+
+
+    <style>
+
+
+
+input[type=checkbox] {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+input[type=checkbox] + label {
+  display: inline-block;
+  background-image: none;
+  background-repeat: no-repeat;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input[type=radio] {
+  position: absolute;
+  z-index: -1000;
+  left: -1000px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+input[type=radio] + label {
+  display: inline-block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+
+.btn_not_today {
+  position: absolute;
+  left:0;
+ top:0;
+}
+
+.btn_not_today label {
+  cursor: pointer;
+  position: relative;
+  font-family: "Noto Sans KR";
+  font-weight: 400;
+  font-size: 14px;
+  color: #ddd;
+  padding-left: 25px;
+}
+
+.btn_not_today label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ddd;
+}
+
+.btn_not_today label::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  background-color: rgb(71, 25, 25);
+  opacity: 0;
+  -webkit-transition: opacity .1s;
+  transition: opacity .1s;
+}
+
+.btn_not_today input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+}
+
+
+
+/*------------------- 상단 배너 ---------------------*/
+
+.page_top_banner {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.page_top_banner .wrap_banner_pc a {
+  position: relative;
+  display: block;
+}
+
+.page_top_banner .wrap_banner_pc .ratio {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.page_top_banner .wrap_banner_pc .img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.page_top_banner .wrap_banner_mo {
+  display: none;
+  padding-bottom: 40px;
+}
+
+.page_top_banner .wrap_banner_mo img {
+  width: 100%;
+}
+
+.page_top_banner .wrap_close {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.page_top_banner .wrap_close .inner {
+  position: relative;
+  max-width: 1284px;
+  min-width: 280px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.page_top_banner .wrap_close .btn_not_today {
+  position: absolute;
+  right: 60px;
+  top: 15px;
+}
+
+.page_top_banner .wrap_close .btn_not_today label {
+  cursor: pointer;
+  font-family: "Noto Sans KR";
+  font-weight: 400;
+  font-size: 14px;
+  color: #ddd;
+  padding-left: 25px;
+}
+
+.page_top_banner .wrap_close .btn_not_today label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ddd;
+}
+
+.page_top_banner .wrap_close .btn_not_today label::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  background-color: #ddd;
+  opacity: 0;
+  -webkit-transition: .1s;
+  transition: .1s;
+}
+
+.page_top_banner .wrap_close .btn_not_today input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+}
+
+.page_top_banner .wrap_close .btn_close {
+  position: absolute;
+  right: 24px;
+  top: 12px;
+  text-indent: -9999px;
+}
+
+.page_top_banner .wrap_close .btn_close::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 4px;
+  width: 25px;
+  height: 25px;
+  background-image: url("https://www.h-point.co.kr/assets/app/img/common/ic_x3.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
+    </style>
+    
+</body>
+</html>
